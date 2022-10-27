@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const util = require('util')
 const fs = require('fs')
-const db = require('./db/db.json');
+const notes = require('./db/db.json');
 
 const app = express.Router();
 const PORT = process.env.PORT || 3001;
@@ -26,8 +26,7 @@ app.get('/notes', function (req, res) {
 
 // Get request to pull up information from the db.json page
 app.get('/api/notes', function (req, res) {
-    res.json(db)
-    res
+    util.promisify(fs.readFile(notes)).then((data) => res.json(JSON.parse(data)))
 });
 
 // Post request to utilise the information pushed from the db.json page
@@ -39,6 +38,13 @@ app.post('/api/notes', function (req, res) {
             title,
             text
         }
+        fs.readFile(notes).then((data) => {
+            const parsedData = JSON.parse(data);
+            parsedData.push(newNote);
+            fs.writeFile('./db/db.json', JSON.stringify(parsedData), (err) =>
+                err ? console.error(err) : console.info(`Data has been successfully updated`)
+            );
+        })        
     }
 });
 
