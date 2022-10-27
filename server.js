@@ -5,7 +5,7 @@ const util = require('util')
 const fs = require('fs')
 const notes = require('./db/db.json');
 
-const app = express.Router();
+const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Middleware to allow the server to read file types
