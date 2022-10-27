@@ -12,6 +12,7 @@ A handy note taker app utilising express to save and store your notes, while als
 * [License](#License)
 
 ## Link to Deployed Site
+https://git.heroku.com/milest-note-taker.git 
 
 ## Screenshot of Website
 <img src=./public/assets/images/Note-Taker-Screenshot.png>
