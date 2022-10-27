@@ -4,8 +4,8 @@
 A handy note taker app utilising express to save and store your notes, while also displaying them for ease.
 
 # Table of Contents
-* [Link to Deployed Site](#Link_to_Deployed_Site)
-* [Screenshot of Website](#Screenshot_of_Website)
+* [Link to Deployed Site](#Link-to-Deployed-Site)
+* [Screenshot of Website](#Screenshot-of-Website)
 * [Installation](#Installation)
 * [Usage](#Usage)
 * [Credits](#Credits)
